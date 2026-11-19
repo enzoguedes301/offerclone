@@ -12,6 +12,12 @@
   var pollTimer = null;
   var expiraTimer = null;
 
+  // Modo demo: só para conferir o visual do fluxo sem backend rodando
+  // (ex.: servidor estático local). Precisa de ?demo=1 explícito na URL —
+  // nunca liga sozinho por falha de rede, senão um comprador com internet
+  // instável veria "pagamento confirmado" sem ter pago.
+  var DEMO = /[?&]demo=1(&|$)/.test(location.search);
+
   // ---------- utilidades ----------
 
   function soDigitos(v) {
@@ -193,6 +199,19 @@
     botao.disabled = true;
     botao.textContent = 'GERANDO PIX...';
 
+    if (DEMO) {
+      // Payload falso com o mesmo formato da resposta real do gateway.
+      setTimeout(function () {
+        mostrarPagamento({
+          id: 'demo-' + Date.now(),
+          pix: '00020126580014BR.GOV.BCB.PIX0136demo-codigo-pix-apenas-para-layout5204000053039865802BR5909DEMO TESTE6009SAO PAULO62070503***6304DEMO',
+          value: 37,
+          status: 'PENDING',
+        });
+      }, 600);
+      return;
+    }
+
     fetch('/api/criar-pix', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -261,6 +280,22 @@
     });
 
     iniciarContagem(30 * 60);
+
+    if (DEMO) {
+      var aviso = document.createElement('p');
+      aviso.style.cssText =
+        'margin:12px 0 0;padding:9px 11px;border-radius:9px;background:#FFF7E6;' +
+        'border:1px solid #F0C9A0;color:#8A5A1A;font-size:12px;text-align:center;';
+      aviso.textContent = 'MODO DEMO — QR code sem valor. Confirma sozinho em 5s.';
+      modal.querySelector('[data-status]').appendChild(aviso);
+
+      setTimeout(function () {
+        if (expiraTimer) { clearInterval(expiraTimer); expiraTimer = null; }
+        if (modal) mostrarConfirmado();
+      }, 5000);
+      return;
+    }
+
     iniciarPolling(cobranca.id);
   }
 
@@ -350,6 +385,9 @@
           'Fique de olho na caixa de entrada (e no spam). Se precisar de ajuda, responda o e-mail da confirmação.' +
         '</p>' +
         '<button type="button" data-fechar class="botao-3d-verde" style="margin-top:18px;">ENTENDI, OBRIGADA!</button>' +
+        (DEMO
+          ? '<p style="margin:12px 0 0;font-size:12px;color:#8A5A1A;">MODO DEMO — nenhum pagamento foi feito.</p>'
+          : '') +
       '</div>'
     );
     modal.querySelector('[data-fechar]').addEventListener('click', fecharModal);
