@@ -8,6 +8,7 @@
 // /api/stats/:id, que fala direto com o gateway autenticado.
 
 const { pixgate, limpaTexto } = require('./_pixgate');
+const { enviarEvento } = require('./_tiktok');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -46,6 +47,13 @@ module.exports = async function handler(req, res) {
         pago_em: t.paid_at,
         pagador: body.payer || null,
         end2end: body.end2end || null,
+      });
+
+      // Conversão confirmada pelo gateway: avisa o TikTok pelo servidor.
+      // event_id = id da transação, para deduplicar com o pixel do navegador.
+      await enviarEvento('CompletePayment', {
+        event_id: t.id,
+        valor: t.value,
       });
     } else {
       console.log('[webhook-pix] não confirmado pelo gateway', {

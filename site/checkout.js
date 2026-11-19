@@ -244,6 +244,16 @@
   function mostrarPagamento(cobranca) {
     var codigo = cobranca.pix;
 
+    // Dados preenchidos e Pix gerado: lead qualificado, ainda não pagou.
+    if (!DEMO && window.pixelTikTok) {
+      window.pixelTikTok.track('AddPaymentInfo', {
+        content_name: 'Devocional Santa Rita',
+        content_type: 'product',
+        value: 37.00,
+        currency: 'BRL',
+      });
+    }
+
     caixa(
       '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;">' +
         '<h2 style="font-size:19px;font-weight:700;color:#A82430;line-height:1.3;margin:0;">Pague com Pix para liberar</h2>' +
@@ -363,7 +373,7 @@
           if (t && t.pago) {
             clearInterval(pollTimer); pollTimer = null;
             if (expiraTimer) { clearInterval(expiraTimer); expiraTimer = null; }
-            mostrarConfirmado();
+            mostrarConfirmado(id);
           }
         })
         .catch(function () { /* rede instável: a próxima tentativa resolve */ });
@@ -372,7 +382,21 @@
 
   // ---------- etapa 3: confirmado ----------
 
-  function mostrarConfirmado() {
+  function mostrarConfirmado(idTransacao) {
+    // Purchase só aqui: o pagamento já foi confirmado pelo gateway.
+    // event_id = id da transação, o mesmo que o servidor envia, para o
+    // TikTok deduplicar e não contar a venda duas vezes.
+    // Em modo demo nada é enviado, para não sujar os dados da campanha.
+    if (!DEMO && window.pixelTikTok) {
+      window.pixelTikTok.track('CompletePayment', {
+        content_name: 'Devocional Santa Rita',
+        content_type: 'product',
+        value: 37.00,
+        currency: 'BRL',
+        event_id: idTransacao,
+      });
+    }
+
     caixa(
       '<div style="text-align:center;">' +
         '<p style="font-size:44px;line-height:1;margin:0 0 10px;">🌹</p>' +
