@@ -1,0 +1,13 @@
+node_modules/
+
+# Credenciais: a Apikey do PixGate vive nas env vars da Vercel, nunca no repo.
+.env
+.env.*
+!.env.example
+
+# Clone bruto do HTTrack: material de origem, não faz parte do deploy.
+clone-raw/
+
+.vercel
+.DS_Store
+Thumbs.db

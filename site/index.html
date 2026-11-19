@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Entregue sua causa impossível nas mãos de Santa Rita em uma jornada de 40 dias de oração e restauração.">
+  <title>40 Dias de Restauração com Santa Rita</title>
+  <link rel="icon" type="image/webp" href="Favicon.webp">
+  <link rel="preload" href="fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/poppins-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img_etapa1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/logotipo.webp">
+  <script src="interacoes-carrossel.js" defer></script>
+  <script src="checkout.js" defer></script>
+  <script src="rastreio30f4.js?v=3" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    [data-carousel] { min-width: 0; width: 100%; cursor: grab; }
+    [data-carousel][data-dragging] { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; }
+    .depoimentos-controles { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .depoimentos-seta {
+      width: 36px; height: 36px; border: 1px solid #e8dfd6; border-radius: 50%;
+      background: #fff; color: #a82430; font-size: 22px; line-height: 1; cursor: pointer;
+    }
+    .depoimentos-ponto {
+      display: grid; width: 24px; height: 32px; place-items: center; cursor: pointer;
+    }
+    .depoimentos-ponto span {
+      width: 8px; height: 8px; border-radius: 20px; background: #cbd5e1;
+    }
+    .depoimentos-ponto[aria-current="true"] span { width: 20px; background: #f0a83c; }
+  </style>
+</head>
+<body>
+<main class="mx-auto flex max-w-lg flex-col gap-10 px-[18px] pb-16 pt-4">
+  <div data-step="0">
+    <div class="flex flex-col gap-[22px] text-center">
+      <img src="assets/logotipo.webp" alt="40 Dias de Restauração com Santa Rita" width="320" height="258" loading="eager" decoding="async" fetchpriority="high" class="mx-auto h-[120px] w-auto object-contain">
+      <h1 class="text-center text-[19px] font-bold leading-[27px] text-primary">VOCÊ CARREGA UMA CAUSA QUE PARECE IMPOSSÍVEL?</h1>
+      <p class="text-center text-base font-bold leading-6 text-ink">Entregue-a nas mãos de Santa Rita, a advogada das causas impossíveis, em uma jornada de 40 dias preparada para você.</p>
+      <div class="flex justify-center">
+        <img src="assets/img_etapa1.webp" alt="40 Dias de Restauração com Santa Rita" width="500" height="500" loading="eager" decoding="async" fetchpriority="high" class="block w-full max-w-[320px] rounded-[10px]">
+      </div>
+      <button type="button" class="botao-jornada">QUERO ENTREGAR MINHA CAUSA</button>
+    </div>
+  </div>
+  <template id="step-1">
+    <div class="flex animate-fadein flex-col gap-[22px]">
+      <div class="flex flex-col gap-3">
+        <h1 class="text-center text-[19px] font-bold leading-[27px] text-ink">Você está carregando algo que parece impossível de resolver?</h1>
+      </div>
+      <div class="grid grid-cols-1 gap-[10px]">
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Sim, há algum tempo</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Sim, e já pensei em desistir</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Ainda não sei, mas preciso de fé</span></button>
+      </div>
+    </div>
+  </template>
+  <template id="step-2">
+    <div class="flex animate-fadein flex-col gap-[22px]">
+      <div class="flex flex-col gap-3">
+        <h1 class="text-center text-[19px] font-bold leading-[27px] text-ink">Qual é a sua causa impossível?</h1>
+        <p class="text-center text-base leading-6 text-muted">Aquela que você mais deseja entregar nas mãos dela.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-[10px]">
+        <button type="button" class="quiz-option"><span class="w-[34px] shrink-0 text-[26px] leading-none">💗</span><span class="flex-1 text-left leading-5">A restauração do meu casamento ou da minha família</span></button>
+        <button type="button" class="quiz-option"><span class="w-[34px] shrink-0 text-[26px] leading-none">🙏</span><span class="flex-1 text-left leading-5">A conversão de alguém que amo</span></button>
+        <button type="button" class="quiz-option"><span class="w-[34px] shrink-0 text-[26px] leading-none">🕊️</span><span class="flex-1 text-left leading-5">Uma cura que parece impossível — minha ou de quem eu amo</span></button>
+        <button type="button" class="quiz-option"><span class="w-[34px] shrink-0 text-[26px] leading-none">⛓️</span><span class="flex-1 text-left leading-5">A libertação de um vício</span></button>
+        <button type="button" class="quiz-option"><span class="w-[34px] shrink-0 text-[26px] leading-none">🌱</span><span class="flex-1 text-left leading-5">Uma situação sem saída — financeira, jurídica, um recomeço</span></button>
+        <button type="button" class="quiz-option"><span class="w-[34px] shrink-0 text-[26px] leading-none">✨</span><span class="flex-1 text-left leading-5">Paz no meu coração e na minha casa</span></button>
+      </div>
+    </div>
+  </template>
+  <template id="step-3">
+    <div class="flex animate-fadein flex-col gap-[22px]">
+      <div class="flex flex-col gap-3">
+        <h1 class="text-center text-[19px] font-bold leading-[27px] text-ink">Há quanto tempo você carrega isso?</h1>
+      </div>
+      <div class="grid grid-cols-1 gap-[10px]">
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Há meses</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Há alguns anos</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Há tanto tempo que quase perdi a conta</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Desde sempre, parece</span></button>
+      </div>
+    </div>
+  </template>
+  <template id="step-4">
+    <div class="flex animate-fadein flex-col gap-[22px]">
+      <div class="flex flex-col gap-3">
+        <h1 class="text-center text-[19px] font-bold leading-[27px] text-ink">E você sente que carrega isso sozinha?</h1>
+      </div>
+      <div class="grid grid-cols-1 gap-[10px]">
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Sim, quase sempre sozinha</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Tenho pessoas, mas ninguém entende de verdade</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Só Deus sabe o peso que eu carrego</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Já nem sei a quem recorrer</span></button>
+      </div>
+    </div>
+  </template>
+  <template id="step-5">
+    <div class="flex animate-fadein flex-col gap-[22px] text-center">
+      <h1 class="text-[19px] font-bold leading-[27px] text-primary">Talvez você não saiba disto:</h1>
+      <div class="flex flex-col gap-4 text-left text-base leading-6 text-ink">
+        <p>Santa Rita foi obrigada a um casamento difícil. Rezou anos pela conversão do marido violento. Ele mudou e depois foi morto. Ela perdeu os filhos. Ficou só.</p>
+        <p>Foi do fundo do impossível que ela floresceu.</p>
+        <img src="assets/rosa.webp" alt="Rosa que floresceu no impossível" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto block w-full max-w-[340px] rounded-[10px]">
+        <p>Por isso ela é a advogada das causas impossíveis: ela não intercede de longe. Ela viveu o que você vive.</p>
+      </div>
+      <button type="button" class="botao-3d">ENTÃO ELA ENTENDE A MINHA CAUSA</button>
+    </div>
+  </template>
+  <template id="step-6">
+    <div class="flex animate-fadein flex-col gap-5">
+      <div class="flex flex-col gap-3 text-center">
+        <h1 class="text-[19px] font-bold leading-[27px] text-ink">Agora, escreva a sua causa e entregue nas mãos de Santa Rita.</h1>
+        <p class="text-base leading-6 text-muted">Escreva com o coração, como se falasse com quem entende. A sua causa será acolhida em nossas orações, e Santa Rita a levará até Jesus.</p>
+      </div>
+      <div class="mt-1 flex flex-col gap-4">
+        <textarea placeholder="Santa Rita, eu entrego nas tuas mãos..." class="min-h-[120px] w-full resize-none rounded-xl border border-border bg-white px-[18px] py-4 font-sans text-base leading-[22px] text-ink shadow-[0_1px_3px_rgba(0,0,0,0.04)] outline-none transition placeholder:text-[#9CA3AF] focus:border-secondary focus:ring-[3px] focus:ring-[rgba(240,168,60,0.35)]" aria-label="Sua intenção de oração" autocomplete="off"></textarea>
+        <button type="button" class="botao-3d" disabled data-prayer-submit="">ENTREGAR MINHA CAUSA</button>
+      </div>
+    </div>
+  </template>
+  <template id="step-7">
+    <div class="flex animate-fadein flex-col gap-[22px] text-center">
+      <h1 class="text-center text-[19px] font-bold leading-[27px] text-ink">Feche os olhos por um instante e reze esta oração sobre a sua causa.</h1>
+      <p class="text-center text-base leading-6 text-ink">Santa Rita vai levar o seu pedido até Jesus. Reze junto, do jeito que estiver! Ela entende até o silêncio.</p>
+      <div class="flex items-center gap-[14px] rounded-xl bg-surface px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+        <audio src="assets/oracao.mp3" preload="none"></audio>
+        <button type="button" aria-label="Tocar oração" class="mr-1 h-0 w-0 shrink-0 cursor-pointer border-y-[11px] border-l-[16px] border-y-transparent border-l-current bg-transparent p-0 text-ink"></button>
+        <div data-audio-seek="" role="slider" aria-label="Progresso do áudio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0" class="relative flex-1 cursor-pointer" style="padding-left: 6.5px; padding-right: 6.5px">
+          <div class="grid h-[38px] items-center gap-[2px]" style="grid-template-columns: repeat(46, minmax(0, 1fr))">
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 79%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 81%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 76%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 81%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 65%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 83%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 70%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 76%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 66%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 69%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 59%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 80%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 84%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 79%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 81%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 64%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 81%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 80%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 85%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 74%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 80%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 75%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 69%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 81%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 74%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 79%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 62%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 81%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 77%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 67%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 73%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 60%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 68%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 75%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 71%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 67%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 45%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 77%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 61%"></span>
+            <span class="mx-auto w-[2px] justify-self-center rounded-sm transition-colors duration-150 bg-[#9aa6b2]" style="height: 54%"></span>
+          </div>
+          <span class="pointer-events-none absolute top-1/2 z-10 rounded-full bg-secondary shadow-[0_0_0_2px_#fff]" style="width: 13px; height: 13px; left: calc(6.5px + 0 * (100% - 13px)); transform: translate(-50%, -50%)"></span>
+        </div>
+        <div class="h-[46px] w-[46px] shrink-0 overflow-hidden rounded-full">
+          <img src="assets/padre.webp" alt="" loading="lazy" decoding="async" fetchpriority="auto" class="h-full w-full object-cover">
+        </div>
+      </div>
+      <button type="button" class="botao-3d" disabled>AMÉM, CONTINUAR</button>
+    </div>
+  </template>
+  <template id="step-8">
+    <div class="flex animate-fadein flex-col gap-[22px]">
+      <div class="flex flex-col gap-3">
+        <h1 class="text-center text-[19px] font-bold leading-[27px] text-ink">Você está pronta para atravessar 40 dias e ver a rosa florescer no inverno da sua causa?</h1>
+        <p class="text-center text-base leading-6 text-muted">40 dias de oração, entrega e restauração: um encontro por dia com Santa Rita.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-[10px]">
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Sim, estou pronta para começar</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Sim, minha causa precisa disso</span></button>
+        <button type="button" class="quiz-option"><span class="flex-1 text-left leading-5">Sim, quero confiar mais uma vez</span></button>
+      </div>
+    </div>
+  </template>
+  <template id="step-9">
+    <div class="flex min-h-[calc(100svh-4rem)] flex-col justify-center">
+      <div class="flex animate-fadein flex-col gap-[22px] text-center">
+        <div class="relative h-[22px] w-full overflow-hidden rounded-full bg-[#EDE4DA]">
+          <div class="h-[22px] rounded-full bg-[linear-gradient(to_right,#D84854,#A82430)] will-change-[width]" style="width: 0%" data-generation-bar=""></div>
+          <span class="absolute inset-0 flex items-center justify-center text-xs font-bold text-white" data-generation-percent="">0%</span>
+        </div>
+        <p class="text-center text-base font-bold leading-6 text-ink">Preparando seu devocional 🌹</p>
+        <p class="text-center text-[15px] font-normal leading-[22px] text-muted">Por intercessão de Santa Rita, sua causa será apresentada ao coração de Jesus, para que, segundo a vontade de Deus, floresça a restauração. 🙏</p>
+      </div>
+    </div>
+  </template>
+  <template id="step-10">
+    <div class="flex animate-fadein flex-col gap-5 pb-4">
+      <section class="sales-section  gap-4 text-center">
+        <img src="assets/logotipo.webp" alt="40 Dias de Restauração com Santa Rita" width="320" height="258" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto h-[88px] w-auto object-contain">
+        <h1 class="text-[22px] font-bold leading-[1.3] text-primary">Seu Devocional de 40 Dias está pronto.</h1>
+        <p class="text-left text-base leading-6 text-muted">Um encontro por dia com Santa Rita para ela levar a sua prece até Jesus e você não carregar isso sozinha.</p>
+        <img src="assets/capa_Oferta.webp" alt="40 Dias de Restauração com Santa Rita" width="600" height="600" srcset="assets/capa_Oferta-320.webp 320w, assets/capa_Oferta-640.webp 600w" sizes="(max-width: 512px) min(320px, calc(100vw - 36px)), 320px" loading="eager" decoding="async" fetchpriority="high" class="mx-auto w-full max-w-[320px] rounded-[10px]">
+      </section>
+      <section class="sales-section sales-section-soft gap-4">
+        <p class="text-left text-base leading-6 text-muted">O pedido que você colocou nas mãos de Santa Rita:</p>
+        <blockquote class="rounded-xl border border-border bg-white px-4 py-4 text-left text-base italic leading-6 text-ink" data-prayer-output=""></blockquote>
+        <p class="text-left text-base leading-6 text-muted">É a esse pedido que você vai voltar todos os dias, pelos próximos 40 dias: para apresentá-lo de novo, entregar de novo e não deixar a fé parar.</p>
+        <p class="text-left text-base leading-6 text-muted">Ele agora tem um lugar.</p>
+      </section>
+      <section class="sales-section  gap-5">
+        <h2 class="text-center text-[22px] font-bold leading-[1.25] text-primary">A sua travessia já está organizada. Olha o caminho:</h2>
+        <p class="text-left text-base leading-6 text-muted">Não são 40 orações soltas. É uma travessia em quatro partes, e <strong class="text-ink">cada uma prepara você para a seguinte.</strong></p>
+        <div class="flex flex-col gap-4">
+          <article class="relative overflow-hidden rounded-[14px] border border-border bg-white px-4 py-5 shadow-[0_3px_0_#E8DFD6,0_4px_14px_rgba(60,36,36,0.06)]">
+            <div class="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true"></div>
+            <div class="mb-4 flex items-center justify-between gap-3 pl-2">
+              <span class="inline-flex items-center rounded-full bg-[#FDF0F1] px-3 py-1 text-[12px] font-bold tracking-wide text-primary">1/4</span>
+              <span class="text-[22px] leading-none" aria-hidden="true">🌹</span>
+            </div>
+            <div class="flex flex-col gap-3 pl-2">
+              <h3 class="text-left text-[17px] font-bold leading-6 text-primary">Dias 1 a 10: A ENTREGA</h3>
+              <p class="text-left text-base leading-6 text-muted">Nos primeiros dez dias, você trabalha uma coisa só, talvez a mais difícil de todas: separar o que está nas suas mãos do que nunca esteve.</p>
+              <p class="text-left text-base leading-6 text-muted">Porque enquanto você acha que precisa dar conta de tudo, você reza… mas segue vigiando. Entrega… mas fica conferindo se mudou alguma coisa.</p>
+              <p class="text-left text-base leading-6 text-muted">Dia após dia, você renova a mesma decisão:</p>
+              <p class="rounded-[12px] border border-[#E8A0A6] bg-[#FDF0F1] px-4 py-3 text-left text-base font-bold leading-6 text-ink">&quot;O que eu não posso mudar com as minhas mãos, eu não carrego mais nelas.&quot;</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden rounded-[14px] border border-border bg-white px-4 py-5 shadow-[0_3px_0_#E8DFD6,0_4px_14px_rgba(60,36,36,0.06)]">
+            <div class="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true"></div>
+            <div class="mb-4 flex items-center justify-between gap-3 pl-2">
+              <span class="inline-flex items-center rounded-full bg-[#FDF0F1] px-3 py-1 text-[12px] font-bold tracking-wide text-primary">2/4</span>
+              <span class="text-[22px] leading-none" aria-hidden="true">🕊️</span>
+            </div>
+            <div class="flex flex-col gap-3 pl-2">
+              <h3 class="text-left text-[17px] font-bold leading-6 text-primary">Dias 11 a 20: O DESERTO</h3>
+              <p class="text-left text-base leading-6 text-muted">A parte mais importante da jornada.</p>
+              <p class="text-left text-base leading-6 text-muted">Porque chega a hora em que você já rezou… e nada mudou ainda. É nesse silêncio que vem o &quot;será que Deus está me ouvindo?&quot;.</p>
+              <p class="text-left text-base leading-6 text-muted">Santa Rita viveu esse silêncio na pele.</p>
+              <p class="text-left text-base leading-6 text-muted">Casada à força com um homem violento, rezou <strong>anos</strong> pela conversão dele sem ver um único sinal. Ele mudou. E logo depois foi assassinado. Os filhos quiseram vingança; ela rezou para que não se tornassem assassinos. E os perdeu. Ficou viúva, sem filhos, sozinha.</p>
+              <p class="text-left text-base leading-6 text-muted">Foi desse deserto que nasceu a santa das causas impossíveis.</p>
+              <p class="rounded-[12px] border border-[#E8A0A6] bg-[#FDF0F1] px-4 py-3 text-left text-base font-bold leading-6 text-ink">Ela não intercede de longe. Ela esperou como você espera.</p>
+              <p class="text-left text-base leading-6 text-muted">Nesses dez dias, a história dela segura a sua: silêncio não é abandono. E tem dia em que a vitória não é receber a resposta.</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden rounded-[14px] border border-border bg-white px-4 py-5 shadow-[0_3px_0_#E8DFD6,0_4px_14px_rgba(60,36,36,0.06)]">
+            <div class="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true"></div>
+            <div class="mb-4 flex items-center justify-between gap-3 pl-2">
+              <span class="inline-flex items-center rounded-full bg-[#FDF0F1] px-3 py-1 text-[12px] font-bold tracking-wide text-primary">3/4</span>
+              <span class="text-[22px] leading-none" aria-hidden="true">🙏</span>
+            </div>
+            <div class="flex flex-col gap-3 pl-2">
+              <h3 class="text-left text-[17px] font-bold leading-6 text-primary">Dias 21 a 30: A RESTAURAÇÃO</h3>
+              <p class="text-left text-base leading-6 text-muted">&quot;Restauração&quot; faz você pensar logo no que quer ver mudar, e é natural.</p>
+              <p class="text-left text-base leading-6 text-muted">Mas tem uma mudança que começa antes: <strong>o jeito como essa causa vive dentro de você.</strong></p>
+              <p class="text-left text-base leading-6 text-muted">Você pode ainda não ter respostas… e voltar a dormir melhor. Pode ainda haver incerteza… e o assunto já não tomar cada minuto do seu pensamento. Pode ainda haver espera… e alguma paz aparecer onde só havia angústia.</p>
+              <p class="text-left text-base leading-6 text-muted">A causa talvez ainda esteja diante de você.</p>
+              <p class="rounded-[12px] border border-[#E8A0A6] bg-[#FDF0F1] px-4 py-3 text-left text-base font-bold leading-6 text-ink">Mas ela já não ocupa você inteira.</p>
+              <p class="text-left text-base leading-6 text-muted">Isso também é restauração.</p>
+            </div>
+          </article>
+          <article class="relative overflow-hidden rounded-[14px] border border-border bg-white px-4 py-5 shadow-[0_3px_0_#E8DFD6,0_4px_14px_rgba(60,36,36,0.06)]">
+            <div class="absolute inset-y-0 left-0 w-1 bg-primary" aria-hidden="true"></div>
+            <div class="mb-4 flex items-center justify-between gap-3 pl-2">
+              <span class="inline-flex items-center rounded-full bg-[#FDF0F1] px-3 py-1 text-[12px] font-bold tracking-wide text-primary">4/4</span>
+              <span class="text-[22px] leading-none" aria-hidden="true">🌹</span>
+            </div>
+            <div class="flex flex-col gap-3 pl-2">
+              <h3 class="text-left text-[17px] font-bold leading-6 text-primary">Dias 31 a 40: O FLORESCIMENTO</h3>
+              <p class="text-left text-base leading-6 text-muted">No inverno mais frio da vida de Santa Rita, uma rosa floresceu onde não era tempo de florescer.</p>
+              <p class="text-left text-base leading-6 text-muted">É assim que você chega ao fim: sem dar prazo a Deus, sem ditar a forma da resposta e sem deixar o &quot;impossível&quot; apagar a esperança.</p>
+              <p class="text-left text-base leading-6 text-muted">Talvez você termine ainda esperando algumas respostas. Talvez outras já tenham começado a aparecer de um jeito que você nem imaginava.</p>
+              <p class="text-left text-base leading-6 text-muted">Mas uma coisa fica:</p>
+              <p class="rounded-[12px] border border-[#E8A0A6] bg-[#FDF0F1] px-4 py-3 text-left text-base font-bold leading-6 text-ink">uma fé que não precisa saber o amanhã para permanecer hoje.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="sales-section sales-section-soft gap-4">
+        <h2 class="text-center text-[22px] font-bold leading-[1.25]">Dentro de cada encontro:</h2>
+        <p class="text-left text-base leading-6 text-muted">Tem dia que você vai chegar tranquila. Tem dia que vai abrir com os olhos cheios de lágrimas. E tem dia que não vai saber o que dizer a Deus. Cada encontro conduz você pela mão:</p>
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <h3 class="text-left text-base font-bold leading-6 text-ink">📖 Um ensinamento</h3>
+            <p class="text-left text-base leading-6 text-muted">Da Palavra ou da vida de Santa Rita, ligado à etapa em que você está. Para mudar o lugar de onde você olha para a sua causa.</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-left text-base font-bold leading-6 text-ink">🙏 Uma oração</h3>
+            <p class="text-left text-base leading-6 text-muted">Sem precisar de palavras perfeitas. A oração do dia leva a sua intenção, pela intercessão de Santa Rita, até Jesus, mais uma vez.</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h3 class="text-left text-base font-bold leading-6 text-ink">🌹 Uma entrega</h3>
+            <p class="text-left text-base leading-6 text-muted">A mesma causa. Talvez o mesmo medo. Mas um coração um pouco diferente a cada dia.</p>
+          </div>
+        </div>
+        <p class="text-left text-base font-bold leading-6 text-ink">Não para convencer Deus. Para lembrar o seu coração de que ele não carrega isso sozinho.</p>
+      </section>
+      <section class="sales-section  gap-5">
+        <h2 class="text-center text-[19px] font-bold leading-[27px] text-primary">Junto com a jornada, o seu acesso já inclui:</h2>
+        <div class="flex flex-col gap-3 rounded-[12px] border border-border bg-green-box px-4 py-4">
+          <img src="assets/bonus_novena.webp" alt="🌹 Novena das Causas Impossíveis" width="560" height="560" srcset="assets/bonus_novena-280.webp 280w, assets/bonus_novena-560.webp 560w" sizes="(max-width: 512px) min(280px, calc(100vw - 72px)), 280px" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto w-full max-w-[280px] rounded-[10px]">
+          <h3 class="text-center text-[17px] font-bold text-ink">🌹 Novena das Causas Impossíveis <span class="text-[13px] font-bold text-price-old line-through">(R$47)</span> <span class="text-[13px] font-semibold text-success">grátis</span></h3>
+          <p class="whitespace-pre-line text-left text-base leading-6 text-green-box-text">Nove dias de oração mais intensa, para quando a aflição apertar e você precisar se recolher. Comece junto com a jornada ou guarde para a hora em que mais precisar.</p>
+        </div>
+        <div class="flex flex-col gap-3 rounded-[12px] border border-border bg-green-box px-4 py-4">
+          <img src="assets/bonus_livro.webp" alt="📖 O Livro das Minhas Causas" width="560" height="560" srcset="assets/bonus_livro-280.webp 280w, assets/bonus_livro-560.webp 560w" sizes="(max-width: 512px) min(280px, calc(100vw - 72px)), 280px" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto w-full max-w-[280px] rounded-[10px]">
+          <h3 class="text-center text-[17px] font-bold text-ink">📖 O Livro das Minhas Causas <span class="text-[13px] font-bold text-price-old line-through">(R$27)</span> <span class="text-[13px] font-semibold text-success">grátis</span></h3>
+          <p class="whitespace-pre-line text-left text-base leading-6 text-green-box-text">Hoje você sabe exatamente quanto essa causa pesa. Daqui a alguns meses, muita coisa pode ter mudado. Aqui você registra suas intenções, o que viveu na espera e as graças que quiser guardar. Porque algumas respostas de Deus só ficam claras olhando o caminho inteiro.</p>
+        </div>
+        <div class="flex flex-col gap-3 rounded-[12px] border border-border bg-green-box px-4 py-4">
+          <img src="assets/bonus_oracao.webp" alt="🙏 Orações para Cada Causa" width="560" height="560" srcset="assets/bonus_oracao-280.webp 280w, assets/bonus_oracao-560.webp 560w" sizes="(max-width: 512px) min(280px, calc(100vw - 72px)), 280px" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto w-full max-w-[280px] rounded-[10px]">
+          <h3 class="text-center text-[17px] font-bold text-ink">🙏 Orações para Cada Causa <span class="text-[13px] font-bold text-price-old line-through">(R$27)</span> <span class="text-[13px] font-semibold text-success">grátis</span></h3>
+          <p class="whitespace-pre-line text-left text-base leading-6 text-green-box-text">Restauração do casamento. Conversão de quem você ama. Cura. Libertação de um vício. Recomeços. Paz dentro de casa.
+Para os dias em que você sabe o que dói… <strong>mas não sabe como transformar isso em oração.</strong></p>
+        </div>
+        <div class="flex flex-col gap-3 rounded-[12px] border border-border bg-green-box px-4 py-4">
+          <img src="assets/bonus_historia.webp" alt="🎧 A História de Santa Rita em Áudio" width="560" height="560" srcset="assets/bonus_historia-280.webp 280w, assets/bonus_historia-560.webp 560w" sizes="(max-width: 512px) min(280px, calc(100vw - 72px)), 280px" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto w-full max-w-[280px] rounded-[10px]">
+          <h3 class="text-center text-[17px] font-bold text-ink">🎧 A História de Santa Rita em Áudio <span class="text-[13px] font-bold text-price-old line-through">(R$19)</span> <span class="text-[13px] font-semibold text-success">grátis</span></h3>
+          <p class="whitespace-pre-line text-left text-base leading-6 text-green-box-text">Você já conhece um pedaço da história dela. Ouvi-la inteira, com calma, muda o jeito como você entende a intercessão dela. Porque Santa Rita não virou a santa das causas impossíveis por ter vivido uma vida fácil. Muito pelo contrário.</p>
+        </div>
+      </section>
+      <section class="sales-section  gap-4">
+        <h2 class="text-center text-[22px] font-bold leading-[1.25]">🌹 O que essa jornada tem significado para outras pessoas</h2>
+        <div class="flex flex-col gap-3">
+          <div data-carousel="" tabindex="0" role="region" aria-label="Depoimentos" class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+            <div class="w-full shrink-0 snap-center">
+              <img src="assets/print1.webp" alt="Depoimento 1" width="1080" height="1737" loading="eager" decoding="async" fetchpriority="auto" class="block w-full rounded-[10px]" draggable="false">
+            </div>
+            <div class="w-full shrink-0 snap-center">
+              <img src="assets/print2.webp" alt="Depoimento 2" width="1080" height="1737" loading="lazy" decoding="async" fetchpriority="auto" class="block w-full rounded-[10px]" draggable="false">
+            </div>
+            <div class="w-full shrink-0 snap-center">
+              <img src="assets/print3.webp" alt="Depoimento 3" width="1080" height="1737" loading="lazy" decoding="async" fetchpriority="auto" class="block w-full rounded-[10px]" draggable="false">
+            </div>
+            <div class="w-full shrink-0 snap-center">
+              <img src="assets/print4.webp" alt="Depoimento 4" width="1080" height="1737" loading="lazy" decoding="async" fetchpriority="auto" class="block w-full rounded-[10px]" draggable="false">
+            </div>
+            <div class="w-full shrink-0 snap-center">
+              <img src="assets/print5.webp" alt="Depoimento 5" width="1080" height="1737" loading="lazy" decoding="async" fetchpriority="auto" class="block w-full rounded-[10px]" draggable="false">
+            </div>
+          </div>
+          <div class="depoimentos-controles">
+            <button type="button" class="depoimentos-seta" data-carousel-prev aria-label="Depoimento anterior">‹</button>
+            <div data-carousel-dots class="flex" role="group" aria-label="Escolher depoimento">
+              <button type="button" class="depoimentos-ponto" aria-label="Ir para o depoimento 1" aria-current="true"><span aria-hidden="true"></span></button>
+              <button type="button" class="depoimentos-ponto" aria-label="Ir para o depoimento 2"><span aria-hidden="true"></span></button>
+              <button type="button" class="depoimentos-ponto" aria-label="Ir para o depoimento 3"><span aria-hidden="true"></span></button>
+              <button type="button" class="depoimentos-ponto" aria-label="Ir para o depoimento 4"><span aria-hidden="true"></span></button>
+              <button type="button" class="depoimentos-ponto" aria-label="Ir para o depoimento 5"><span aria-hidden="true"></span></button>
+            </div>
+            <button type="button" class="depoimentos-seta" data-carousel-next aria-label="Próximo depoimento">›</button>
+          </div>
+        </div>
+      </section>
+      <section class="sales-section sales-section-highlight gap-5">
+        <h2 class="text-center text-[22px] font-bold leading-[1.25]">🌹 Tudo isso já está preparado.</h2>
+        <div class="flex flex-col gap-4">
+          <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-left text-base font-semibold leading-6 text-ink">40 Dias de Restauração com Santa Rita</p>
+              <span class="shrink-0 text-base font-bold text-price-old line-through">R$127,00</span>
+            </div>
+          </div>
+          <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-left text-base font-semibold leading-6 text-ink">Novena das Causas Impossíveis</p>
+              <span class="shrink-0 text-base font-bold text-price-old line-through">R$47,00</span>
+            </div>
+          </div>
+          <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-left text-base font-semibold leading-6 text-ink">O Livro das Minhas Causas</p>
+              <span class="shrink-0 text-base font-bold text-price-old line-through">R$27,00</span>
+            </div>
+          </div>
+          <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-left text-base font-semibold leading-6 text-ink">Orações para Cada Causa</p>
+              <span class="shrink-0 text-base font-bold text-price-old line-through">R$27,00</span>
+            </div>
+          </div>
+          <div class="border-b border-border pb-4 last:border-0 last:pb-0">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-left text-base font-semibold leading-6 text-ink">História de Santa Rita em Áudio</p>
+              <span class="shrink-0 text-base font-bold text-price-old line-through">R$19,00</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3 text-center">
+          <p class="text-2xl font-bold text-price-old line-through">De R$247,00</p><p class="text-[17px] font-semibold text-ink">por apenas</p>
+          <p class="text-4xl font-bold leading-[1.1] text-success">R$37,00 à vista</p>
+          <p class="text-[17px] font-semibold text-success">ou 7x de R$5,98</p>
+          <a href="#checkout" class="botao-3d-verde mt-2 go-to-checkout">EU QUERO SANTA RITA COMIGO!</a>
+        </div>
+      </section>
+      <section class="sales-section sales-section-soft gap-4 text-center">
+        <img src="assets/selo_garantia.webp" alt="Garantia de 30 dias" width="500" height="500" loading="lazy" decoding="async" fetchpriority="auto" class="mx-auto w-[180px]">
+        <h2 class="text-[22px] font-bold leading-[1.25]">Garantia incondicional de 30 dias</h2>
+        <p class="text-left text-base leading-6 text-muted">Eu tenho certeza de que esses 40 dias vão ser uma bênção na sua vida, e por isso o risco é todo meu, não seu.</p>
+        <p class="text-left text-base leading-6 text-muted">Comece hoje. Reze a Novena, registre suas intenções no seu Livro, viva os primeiros encontros. Se em até 30 dias você sentir, por qualquer motivo, que isso não é para você, basta me enviar uma mensagem. Devolvo cada centavo, sem perguntas e sem complicação.</p>
+        <p class="text-left text-base leading-6 text-muted">Você não tem nada a perder. Só uma caminhada inteira a ganhar. 🙏</p>
+      </section>
+      <section class="sales-section">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-center text-[22px] font-bold leading-[1.25]">Antes de liberar, talvez você ainda se pergunte…</h2>
+          <div class="flex flex-col gap-2">
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Eu já rezei tanto por essa causa. O que seria diferente agora?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Talvez você realmente já tenha rezado muito. A diferença não é uma &quot;oração secreta&quot; que finalmente fará Deus ouvir.</p>
+                  <p class="text-left text-base leading-6 text-muted">É a <strong>continuidade</strong>: em vez de recorrer à oração só quando a angústia aperta, você passa a ter um caminho diário para alimentar a fé e perseverar na espera.</p>
+                  <p class="text-left text-base leading-6 text-muted">Não é sobre fazer Deus ouvir mais. <strong>É sobre ajudar o seu coração a não desistir.</strong></p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Minha causa será resolvida em 40 dias?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Não. E seria errado prometer isso.</p>
+                  <p class="text-left text-base leading-6 text-muted">Santa Rita intercede. <strong>Quem concede a graça é Deus, segundo Sua vontade.</strong> Os 40 dias não são um prazo dado a Deus. São a sua jornada de oração, entrega e perseverança.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Então estou pagando para rezar?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Não. A oração não está à venda. Você não paga para falar com Deus nem pela intercessão de Santa Rita.</p>
+                  <p class="text-left text-base leading-6 text-muted">O valor é pelo devocional criado para acompanhar você: os 40 encontros, as orações guiadas, os momentos de entrega e todos os bônus.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Minha fé está fraca. Posso começar assim mesmo?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Pode. Você não precisa esperar a fé ficar forte para começar a alimentá-la.</p>
+                  <p class="text-left text-base leading-6 text-muted">Vai ter dia de rezar cheia de esperança. E dia de só conseguir dizer: <strong>&quot;Senhor, me ajuda a continuar.&quot;</strong></p>
+                  <p class="text-left text-base leading-6 text-muted">Venha como está.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Estou afastada de Deus há muito tempo.<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Então não faça disso mais um motivo para esperar.</p>
+                  <p class="text-left text-base leading-6 text-muted">A volta não precisa começar com uma grande mudança. Pode começar com alguns minutos. Uma oração. Um encontro.</p>
+                  <p class="text-left text-base leading-6 text-muted font-bold">O Dia 1.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">E se eu perder um dia?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Continue. O devocional não é mais uma obrigação na sua vida.</p>
+                  <p class="text-left text-base leading-6 text-muted">Perdeu um dia? Retome no seguinte. O importante é não deixar uma pausa virar desistência.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Preciso instalar alguma coisa?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Não. Funciona direto pelo navegador do celular. Simples, mesmo para quem não entende de tecnologia. Se quiser, dá para adicionar um atalho à tela inicial com um toque.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">Por quanto tempo tenho acesso?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted"><strong>1 ano.</strong> Tempo de sobra para viver os 40 dias com calma e voltar aos conteúdos sempre que precisar.</p>
+                </div>
+              </div>
+            </details>
+            <details class="group rounded-xl border border-border bg-white px-[18px] py-4 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+              <summary class="cursor-pointer list-none text-base font-semibold leading-6 text-ink marker:content-none [&amp;::-webkit-details-marker]:hidden"><span class="flex items-center justify-between gap-3">E se eu não gostar?<span class="text-muted transition group-open:rotate-45">+</span></span></summary>
+              <div class="mt-3 text-left text-base leading-6 text-muted">
+                <div class="flex flex-col gap-3 whitespace-pre-line">
+                  <p class="text-left text-base leading-6 text-muted">Você tem 30 dias de garantia. Basta pedir e devolvemos 100% do valor.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <section class="sales-section sales-section-highlight gap-4 text-center">
+        <h2 class="text-[22px] font-bold leading-[1.25] text-primary">🌹 A sua causa já foi entregue. Agora, comece a travessia.</h2>
+        <p class="text-base leading-6 text-muted">Você não precisa resolver nada hoje. Nem saber como termina. Nem ter força para 40 dias de uma vez.</p>
+        <p class="text-base leading-6 text-muted font-bold">Hoje, você só precisa viver o primeiro.</p>
+        <p class="text-base leading-6 text-muted">Amanhã tem outro encontro. Depois, outro. E quando a aflição tentar voltar, você vai ter para onde ir.</p>
+        <p class="text-base leading-6 text-muted">Uma oração. Uma entrega. Um dia de cada vez.</p>
+        <p class="text-4xl font-bold leading-[1.1] text-success">R$37,00</p>
+        <p class="text-base font-bold leading-6 text-ink">Pagamento único · acesso imediato · 30 dias de garantia · acesso por 1 ano</p>
+        <div class="flex flex-col gap-3 text-center">
+          <a href="#checkout" class="botao-3d-verde mt-2 go-to-checkout">LIBERAR MEU DEVOCIONAL</a>
+        </div>
+        <p class="text-base leading-6 text-muted">Santa Rita, advogada das causas impossíveis, rogai por nós. 🌹</p>
+      </section>
+    </div>
+  </template>
+</main>
+<template id="quiz-header">
+<div class="flex flex-col gap-[22px]">
+  <img src="assets/logotipo.webp" alt="40 Dias de Restauração com Santa Rita" width="320" height="258" loading="eager" decoding="async" fetchpriority="high" class="mx-auto h-[100px] w-auto object-contain">
+  <div class="box-border h-[14px] w-full overflow-hidden rounded-full border border-border bg-[#EDE4DA]">
+    <div class="h-full rounded-full bg-primary transition-[width] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" style="width: 11%" data-quiz-progress=""></div>
+  </div>
+</div>
+</template>
+</body>
+
+</html>
